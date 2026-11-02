@@ -67,31 +67,6 @@ print(f"Mean_Absolute_Error:{mae:.2f}")
 print(f"Mean_Squared_Error:{mse:.2f}")
 print(f"r2_Score:{rs:.2f}")
 
-'''
-# Forescating Future Values
-
-n = int(input("How many days do you want to forecast? "))
-
-last_day = df["day"].max()              # Returns the last day
-
-future_days = pd.DataFrame({
-    "day": range(last_day + 1, last_day + n + 1)    # Creating forecast range according to input
-})
-
-predictions = model.predict(future_days)
-
-for i, sales in enumerate(predictions, 1):
-    print(f"Day {i}: {sales:.2f}")
-
-# Plotting Graph
-
-plt.plot(predictions, marker="o")
-plt.xlabel("Future Days")
-plt.ylabel("Predicted Sales")
-plt.title("Future Sales Forecast")
-plt.grid(True)
-plt.show()
-'''
 # Dumping the model
 
 joblib.dump(model, "model.joblib")
